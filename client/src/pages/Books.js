@@ -62,12 +62,11 @@ class Books extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-            <Jumbotron />
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <Card heading="Google Books Search">
+            <Card>
               <SearchForm
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
