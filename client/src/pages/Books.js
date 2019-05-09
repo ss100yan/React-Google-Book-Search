@@ -61,11 +61,13 @@ class Books extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-12">
+          <Col size="md-3">
           </Col>
         </Row>
         <Row>
-          <Col size="md-12">
+        <Col size="md-3">
+          </Col>
+          <Col size="md-6">
             <Card>
               <SearchForm
                 value={this.state.search}
