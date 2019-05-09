@@ -61,10 +61,6 @@ class Books extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-3">
-          </Col>
-        </Row>
-        <Row>
         <Col size="md-3">
           </Col>
           <Col size="md-6">
@@ -107,7 +103,7 @@ class Books extends Component {
                 ))}
               </Card>
             ) : (
-              <Card heading="Search Results"></Card>
+              <div></div>
             )}
           </Col>
         </Row>
