@@ -53,7 +53,7 @@ class Books extends Component {
   // saves book to database
   handleSaveBook = bookData => {
     API.saveBook(bookData)
-      .then(res => alert("Book Saved!"))
+      .then(res => alert("Saved!"))
       .catch(err => console.log(err));
   };
 
@@ -61,7 +61,7 @@ class Books extends Component {
     return (
       <Container>
         <Row>
-        <Col size="md-3">
+          <Col size="md-3">
           </Col>
           <Col size="md-6">
             <Card>
@@ -74,34 +74,35 @@ class Books extends Component {
           </Col>
         </Row>
         <Row>
-          
+
           <Col size="md-12">
             {this.state.books.length ? (
               <Card>
                 {this.state.books.map(book => (
                   <BookDetail
                     key={book.id}
-                    src={book.volumeInfo.imageLinks 
-                    ? book.volumeInfo.imageLinks.thumbnail:"N/A"}
+                    src={book.volumeInfo.imageLinks
+                      ? book.volumeInfo.imageLinks.thumbnail : "N/A"}
                     title={book.volumeInfo.title}
                     authors={book.volumeInfo.authors}
                     date={book.volumeInfo.publishedDate}
                     description={book.volumeInfo.description}
-                    link={book.volumeInfo.infoLink}
-                    handleSaveBook={() => this.handleSaveBook({ 
+                    link={book.volumeInfo.infoLink }
+                    handleSaveBook={() => this.handleSaveBook({
                       title: book.volumeInfo.title,
-                      src: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail 
-                      : "N/A",
+                      src: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail
+                        : "N/A",
                       authors: book.volumeInfo.authors,
                       date: book.volumeInfo.publishedDate,
                       description: book.volumeInfo.description,
-                      link: book.volumeInfo.infoLink})}
+                      link: book.volumeInfo.infoLink
+                    })}
                   />
                 ))}
               </Card>
             ) : (
-              <div></div>
-            )}
+                <div></div>
+              )}
           </Col>
         </Row>
       </Container>

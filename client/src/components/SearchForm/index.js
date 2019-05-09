@@ -10,11 +10,11 @@ const SearchForm = props => {
           name="search"
           type="text"
           className="form-control"
-          placeholder=""
+          placeholder="Google Books"
           id="search"
         />
         <br />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary">
+        <button onClick={props.handleFormSubmit} className="btn btn-light ">
           Search
         </button>
       </div>

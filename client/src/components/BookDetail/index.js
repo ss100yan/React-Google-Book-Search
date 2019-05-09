@@ -8,8 +8,8 @@ const BookDetail = props => {
         <p style={{ fontSize: "30px" }}>{props.title}</p>
         <p><strong>Author:</strong> {props.authors}</p>
         <p><strong>Publish Date:</strong> {props.date}</p>
-        <p><strong>Google Books Link:</strong> <a href={props.link} target={"_blank"} >{props.title}</a></p>
-        <button onClick={props.handleSaveBook} className="btn btn-primary save-btn" style={{ marginBottom: "20px"}}>
+        <p><strong>Google Books Link:</strong> <a href={props.link} target={"_blank"} class="text-secondary" >{props.title}</a></p>
+        <button onClick={props.handleSaveBook} className="btn btn-light save-btn" style={{ marginBottom: "20px"}}>
           Save
         </button>
       </div>
