@@ -75,7 +75,7 @@ class Books extends Component {
         </Row>
         <Row>
           
-          <Col size="md-10">
+          <Col size="md-12">
             {this.state.books.length ? (
               <Card>
                 {this.state.books.map(book => (
