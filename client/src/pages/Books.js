@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
@@ -53,7 +52,7 @@ class Books extends Component {
   // saves book to database
   handleSaveBook = bookData => {
     API.saveBook(bookData)
-      .then(res => alert("Saved!"))
+    .then(res => console.log(res.status))
       .catch(err => console.log(err));
   };
 
@@ -79,25 +78,28 @@ class Books extends Component {
             {this.state.books.length ? (
               <Card>
                 {this.state.books.map(book => (
-                  <BookDetail
-                    key={book.id}
-                    src={book.volumeInfo.imageLinks
-                      ? book.volumeInfo.imageLinks.thumbnail : "N/A"}
-                    title={book.volumeInfo.title}
-                    authors={book.volumeInfo.authors}
-                    date={book.volumeInfo.publishedDate}
-                    description={book.volumeInfo.description}
-                    link={book.volumeInfo.infoLink }
-                    handleSaveBook={() => this.handleSaveBook({
-                      title: book.volumeInfo.title,
-                      src: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail
-                        : "N/A",
-                      authors: book.volumeInfo.authors,
-                      date: book.volumeInfo.publishedDate,
-                      description: book.volumeInfo.description,
-                      link: book.volumeInfo.infoLink
-                    })}
-                  />
+                       <BookDetail
+                       key={book.id}
+                       src={book.volumeInfo.imageLinks 
+                         ? book.volumeInfo.imageLinks.thumbnail
+                         : ""}
+                       title={book.volumeInfo.title}
+                       authors={book.volumeInfo.authors
+                         ? book.volumeInfo.authors.join(", ")
+                         : "N/A"}
+                       date={book.volumeInfo.publishedDate}
+                       description={book.volumeInfo.description}
+                       link={book.volumeInfo.infoLink}
+                       handleSaveBook={() => this.handleSaveBook({ 
+                         title: book.volumeInfo.title,
+                         src: book.volumeInfo.imageLinks 
+                           ? book.volumeInfo.imageLinks.thumbnail 
+                           : "",
+                         authors: book.volumeInfo.authors,
+                         date: book.volumeInfo.publishedDate,
+                         description: book.volumeInfo.description,
+                         link: book.volumeInfo.infoLink})}
+                     />
                 ))}
               </Card>
             ) : (

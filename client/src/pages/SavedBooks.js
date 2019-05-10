@@ -4,6 +4,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import Card from "../components/Card";
 import SavedBookDetail from "../components/SavedBookDetail";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 class SavedBooks extends Component {
@@ -11,8 +12,11 @@ class SavedBooks extends Component {
     books: []
   };
 
-  // grab the books from /api/books
   componentDidMount() {
+    this.loadBooks();
+  }
+
+  loadBooks = () => {
     API.getBooks()
       .then(res => this.setState(
         { 
