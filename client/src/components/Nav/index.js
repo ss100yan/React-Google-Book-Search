@@ -12,7 +12,7 @@ const Nav = props => (
       </ul>
       <ul className="nav navbar-nav navbar-right">
         <li>
-          <a href="/savedbooks" class="text-secondary">
+          <a href="/SavedBooks" class="text-secondary">
             Saved Books
           </a>
         </li>
